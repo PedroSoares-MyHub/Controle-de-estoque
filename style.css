@@ -1,0 +1,149 @@
+/* 
+    Trabalho de Programação 3 realizado pelos alunos
+    Breno Henrique
+    Kaique Oliveira Santos
+    Pedro Soares
+    Tiago Oliveira Lemos Carvalho
+*/
+
+:root { /* definicao de variaveis, valores que serao reutilizados ao longo do arquivo css */
+    --preto: #333;
+    --gelo: #f4f4f4;
+    --cinza-claro: #f2f2f2;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--gelo);
+}
+
+header {
+    background-color: var(--preto);
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header > h1 {
+    margin-left: 20px;
+}
+
+nav {
+    margin-right: 20px;
+}
+
+a {
+    color: darkgray;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a:hover {
+    color: white;
+}
+
+section {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+button, select {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container-botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+section#estoque .container-botoes {
+    flex-direction: column;
+}
+
+#container-venda {
+    align-items: right;
+}
+
+button {
+    background-color: var(--preto);
+    color: white;
+    border: solid 2px var(--preto);
+    cursor: pointer;
+    width: 30%;
+    height: fit-content;
+    border-radius: 20px;
+    margin: 5px 10px;
+}
+
+button.adicionar, button.vender {
+    background-color: darkgreen;
+    border: solid 2px var(--preto);
+}
+
+button.excluir {
+    background-color: darkred;
+    border: solid 2px var(--preto);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--cinza-claro);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: 2px solid var(--preto);
+}
+
+tr.selecionada {
+    background-color: var(--preto);
+    color: var(--cinza-claro);
+}
+
+section[display="true"] {
+    display: block;
+}
+
+@media(orientation: portrait) {
+    header, .container-botoes {
+        flex-direction: column;
+    }
+
+    .container-botoes button {
+        width: 100%;
+    }
+}

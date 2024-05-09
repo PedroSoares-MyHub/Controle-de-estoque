@@ -1,0 +1,128 @@
+<!-- 
+    Trabalho de Programação 3 realizado pelos alunos
+    Breno Henrique
+    Kaique Oliveira Santos
+    Pedro Soares
+    Tiago Oliveira Lemos Carvalho
+ -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Estoque</title>
+</head>
+<body>
+    <header>
+        <h1>Controle de Estoque</h1>
+        <nav>
+            <a href="#" section="estoque">Estoque</a>
+            <a href="#" section="categoria">Categoria</a>
+            <a href="#" section="produto">Produtos</a>
+        </nav>
+    </header>
+
+    <section id="categoria" display="true">
+        <div id="form-categoria">
+            <label for="categoria">Categoria:</label>
+            <input type="text" id="categoria" name="categoria" required>
+            <div class="container-botoes">
+                <button class="adicionar" onclick="adicionarCategoria()">Adicionar</button>
+                <button onclick="editarCategoria()">Renomear</button>
+                <button class="excluir" onclick="excluirCategoria()">Excluir</button>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <table id="categorias">
+            <thead>
+                <tr id="cabecalho-categoria">
+                    <th>Id</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaCategorias">
+                <!-- Aqui serão exibidos as categorias cadastradas no sistema -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="produto">
+        <div id="form-produto">
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categorias">
+            </select>
+
+            <label for="produto">Produto:</label>
+            <input type="text" id="produto" name="produto" required>
+            
+            <label for="custo">Custo (R$):</label>
+            <input type="number" id="custo" name="custo" required>
+            
+            <div class="container-botoes">
+                <button class="adicionar" onclick="adicionarProduto()">Adicionar</button>
+                <button onclick="editarProduto()">Editar</button>
+                <button class="excluir" onclick="excluirProduto()">Excluir</button>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <table id="produtos">
+            <thead>
+                <tr id="cabecalho">
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Custo (R$)</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaEstoque">
+                <!-- Aqui serão exibidos os itens que estão no estoque -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="estoque">
+        <div id="form-estoque">
+            <label for="produto">Produto:</label>
+            <select name="produto" id="produtos" disabled>
+            </select>
+            
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" required>
+            
+            <div class="container-botoes">
+                <div id="container-editar-estoque">
+                    <button class="adicionar" onclick="adicionarAoEstoque()">Adicionar</button>
+                    <button onclick="editarEstoque()">Editar</button>
+                    <button class="excluir" onclick="removerDoEstoque()">Remover</button>
+                </div>
+                <div id="container-venda">
+                    <label for="quantidade-venda">Quantidade:</label>
+                    <input type="number" name="quantidade-venda" id="quantidade-venda">
+                    <button class="vender" onclick="venderProduto()">Vender</button>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <table id="estoque">
+            <thead>
+                <tr id="cabecalho">
+                    <th>Produto</th>
+                    <th>Em estoque</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaEstoque">
+                <!-- Aqui serão exibidos os itens que estão no estoque -->
+            </tbody>
+        </table>
+    </section>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</body>
+</html>
